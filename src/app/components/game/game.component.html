@@ -1,0 +1,27 @@
+<div class="game-container">
+  <form class="game-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User 1</mat-label>
+      <input matInput placeholder="User 1" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User 2</mat-label>
+      <input matInput placeholder="User 2" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User 3</mat-label>
+      <input matInput placeholder="User 3" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Kilometers</mat-label>
+      <input matInput placeholder="Kilometers" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="button" (click)="sendPlayers()">Start game</button>
+  </form>
+
+  <app-game-board></app-game-board>
+</div>

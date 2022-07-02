@@ -1,0 +1,8 @@
+.game-container {
+  /* background-color: #000; */
+}
+
+.game-form {
+    display: flex;
+    flex-direction: column;
+}
