@@ -63,4 +63,5 @@ import { RouterModule } from '@angular/router';
   providers: [AuthService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

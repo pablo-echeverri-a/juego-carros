@@ -56,7 +56,6 @@ export class GameBoardComponent implements OnInit {
       this.players.push(this.player2);
       this.player3 = {"carrilId": x[2].carrilId, "imagen": '../carro1.png'};
       this.players.push(this.player3);
-      console.log('OEEEEEEEEEE');
       console.log(this.players);
     });
   }
@@ -70,8 +69,8 @@ export class GameBoardComponent implements OnInit {
       console.log(x);
 
       if(x.type === 'carro.KilometrajeCambiado'){
-        console.log(x.carrilId.uuid);
-        console.log(this.player1);
+        //console.log(x.carrilId.uuid);
+        //console.log(this.player1);
         
         switch(x.carrilId.uuid) { 
           case this.player1.carrilId: {
@@ -92,8 +91,7 @@ export class GameBoardComponent implements OnInit {
 
       if(x.type === 'carril.CarroFinalizoSuRecorrido'){
         this.llegada.push(x.aggregateRootId);
-        console.log('LLEGADA', this.llegada);
-                
+        this.llegada = this.llegada.reverse();
       }
 
       if(x.type === 'juego.JuegoFinalizado'){
@@ -101,10 +99,9 @@ export class GameBoardComponent implements OnInit {
         this.segundoLugar = x.podio.segundoLugar.nombre.value;
         this.tercerLugar = x.podio.tercerLugar.nombre.value;
 
-        this.players.forEach((player) => {
+        this.players.reverse().forEach((player) => {
           if(player.carrilId === this.llegada[0].toString()){
             this.imagenPrimerLugar = player.imagen;
-            console.log('LLEGO PRIMERO', player.imagen);
           } else if(player.carrilId === this.llegada[1].toString()){
             this.imagenSegundoLugar = player.imagen;
           } else if(player.carrilId === this.llegada[2].toString()){
