@@ -1,7 +1,55 @@
-<div class="game-board-container">
-  <mat-slider aria-label="unit(s)"></mat-slider>
+<div class="start">
+  <!--
+  <button class="btn btn-info btn-lg" mat-raised-button color="primary" type="button"
+    (click)="getRaceData()">Play</button>
+  -->  
 
-  <mat-slider aria-label="unit(s)"></mat-slider>
+  <button class="btn btn-info btn-lg" mat-raised-button color="primary" type="button"
+    (click)="goToSettings()">Volver</button>
 
-  <mat-slider aria-label="unit(s)"></mat-slider>
+  <div class="pista-info">
+    <p>Longitud de la pista (m): {{kilometersLimit}} </p>
+  </div>
+
+</div>
+
+<div class="pista">
+  <!--
+  <mat-slider aria-label="unit(s)" [value]="distanceData1" [max]="kilometersLimit"></mat-slider>
+  -->
+  
+  <input type="range" class="range-custom-1" min="0" [max]="kilometersLimit" [value]="distanceData1" disabled>
+
+  
+  <!--
+  <mat-slider aria-label="unit(s)" [value]="distanceData2" [max]="kilometersLimit"></mat-slider>
+  -->
+
+  <input type="range" class="range-custom-2" min="0" [max]="kilometersLimit" [value]="distanceData2" disabled>
+
+  <!--
+  <mat-slider aria-label="unit(s)" widht="100%" [value]="distanceData3" [max]="kilometersLimit"></mat-slider>
+  -->
+
+  <input type="range" class="range-custom-3" min="0" [max]="kilometersLimit" [value]="distanceData3" disabled>
+
+</div>
+
+<div id="podio">
+
+  <div id="primer lugar" style="height: 120px">
+    <p>Primer lugar: {{primerLugar}}</p>
+    <img src='{{imagenPrimerLugar}}' width="100px">
+  </div>
+
+  <div id="segundo lugar" style="height: 120px">
+    <p>Segundo lugar: {{segundoLugar}}</p>
+    <img src='{{imagenSegundoLugar}}' width="100px">
+  </div>
+
+  <div id="tercer lugar" style="height: 120px">
+    <p>Tercer lugar: {{tercerLugar}}</p>
+    <img src='{{imagenTercerLugar}}'  width="100px">
+  </div>
+
 </div>

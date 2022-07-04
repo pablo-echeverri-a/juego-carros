@@ -1,0 +1,100 @@
+
+
+.start {
+    margin-top: 5%;
+    margin-left: 40%;
+    align-items: center;
+}
+
+.pista-info {
+    margin-top: 10%;
+    margin-left: -10%;
+    align-items: center;
+}
+
+.mat-slider {
+    width: 500px;
+}
+
+.pista {
+   width:max-content;
+   height: max-content;
+   margin-left: 30%;
+   background-image: url('https://media.istockphoto.com/photos/green-textured-wall-picture-id1251961798?k=20&m=1251961798&s=612x612&w=0&h=aYK2zfSRdNQSvYrG8QyWW1Ct2mlktEq5gs9zSSRjAmw=');
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position:center center;
+}
+
+.range-custom-1 {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+}
+
+.range-custom-1::-webkit-slider-runnable-track{
+
+    background-image: url('https://media.istockphoto.com/vectors/line-racing-track-with-start-and-finish-in-top-view-asphalt-for-drive-vector-id1221477030?b=1&k=6&m=1221477030&s=170667a&w=0&h=qXfyFMzGyXjojSWtdH5IY_yFX_dcAr5_JcJBC7I3vRQ=');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.range-custom-1::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    background-image: url('src\app\shared\images\carro3.png');
+}
+
+.range-custom-2 {
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+.range-custom-2::-webkit-slider-runnable-track{
+
+    background-image: url('https://media.istockphoto.com/vectors/line-racing-track-with-start-and-finish-in-top-view-asphalt-for-drive-vector-id1221477030?b=1&k=6&m=1221477030&s=170667a&w=0&h=qXfyFMzGyXjojSWtdH5IY_yFX_dcAr5_JcJBC7I3vRQ=');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.range-custom-2::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    background-image: url('src\app\shared\images\carro2.png');
+}
+
+.range-custom-3 {
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+.range-custom-3::-webkit-slider-runnable-track{
+
+    background-image: url('https://media.istockphoto.com/vectors/line-racing-track-with-start-and-finish-in-top-view-asphalt-for-drive-vector-id1221477030?b=1&k=6&m=1221477030&s=170667a&w=0&h=qXfyFMzGyXjojSWtdH5IY_yFX_dcAr5_JcJBC7I3vRQ=');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.range-custom-3::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    background-image: url('src\app\shared\images\carro1.png');
+}
+
+.podio {
+    height: 100px;
+    width: 100px;
+}
+

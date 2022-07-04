@@ -29,6 +29,8 @@ import { AuthService } from './shared/services/auth.service';
 import { GameBoardComponent } from './components/game-board/game-board.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     MatSliderModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

@@ -1,27 +1,54 @@
 <div class="game-container">
-  <form class="game-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>User 1</mat-label>
-      <input matInput placeholder="User 1" />
-    </mat-form-field>
+  <form #gameForm="ngForm" class="game-form">
 
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>User 2</mat-label>
-      <input matInput placeholder="User 2" />
-    </mat-form-field>
+    <div style="background-color: aliceblue;">
+      <mat-form-field class="example-full-width" style="margin-left: 30%;" appearance="fill">
+        <mat-label>Nombre Jugador 1</mat-label>
+        <input matInput placeholder="User 1" name="user1" ngModel />
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cédula</mat-label>
+        <input matInput placeholder="ID 1" name="id1" ngModel />
+      </mat-form-field>
+    </div>
 
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>User 3</mat-label>
-      <input matInput placeholder="User 3" />
-    </mat-form-field>
+    <div style="background-color: beige;">
+      <mat-form-field class="example-full-width" style="margin-left: 30%;" appearance="fill">
+        <mat-label>Nombre Jugador 2</mat-label>
+        <input matInput placeholder="User 2" name="user2" ngModel/>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cédula</mat-label>
+        <input matInput placeholder="ID 2" name="id2" ngModel/>
+      </mat-form-field>
+    </div>
 
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Kilometers</mat-label>
-      <input matInput placeholder="Kilometers" />
-    </mat-form-field>
+    <div style="background-color:snow;">
+      <mat-form-field class="example-full-width" style="margin-left: 30%;" appearance="fill">
+        <mat-label>Nombre Jugador 3</mat-label>
+        <input matInput placeholder="User 3" name="user3" ngModel/>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cédula</mat-label>
+        <input matInput placeholder="ID 3" name="id3" ngModel/>
+      </mat-form-field>
+    </div>
 
-    <button mat-raised-button color="primary" type="button" (click)="sendPlayers()">Start game</button>
+    <div>
+      <mat-form-field class="example-full-width" style="margin-left: 30%;" appearance="fill">
+        <mat-label>Kilómetros a recorrer</mat-label>
+        <input matInput placeholder="Kilometers" name="kilometers" ngModel />
+      </mat-form-field>
+    </div>
+
+    <pre>{{gameForm.value | json}}</pre>
+
+    <button mat-raised-button color="primary" type="button" (click)="sendPlayers()">Create game</button>
+    <pre>{{gameId}}</pre>
+    <button mat-raised-button color="primary" type="button" (click)="startGame(gameId)">Start game</button>
+
   </form>
-
-  <app-game-board></app-game-board>
 </div>
