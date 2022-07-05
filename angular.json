@@ -34,12 +34,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "2mb",
-                  "maximumError": "2mb"
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2mb",
-                  "maximumError": "2mb"
+                  "maximumError": "5mb"
                 }
               ],
               "fileReplacements": [
@@ -99,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "6af0efd6-2f21-4741-9b70-0500e0800511"
   }
 }
