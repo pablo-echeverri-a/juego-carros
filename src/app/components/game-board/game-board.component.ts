@@ -50,11 +50,11 @@ export class GameBoardComponent implements OnInit {
 
   setPlayersId(){
     this.dataService.getCars(this.dataService.getGameId()).subscribe((x: any) => {
-      this.player1 = {"carrilId": x[0].carrilId, "imagen": '../carro3.png'};
+      this.player1 = {"carrilId": x[0].carrilId, "imagen": '/assets/carro3.png'};
       this.players.push(this.player1);
-      this.player2 = {"carrilId": x[1].carrilId, "imagen": '../carro2.png'};
+      this.player2 = {"carrilId": x[1].carrilId, "imagen": '/assets/carro2.png'};
       this.players.push(this.player2);
-      this.player3 = {"carrilId": x[2].carrilId, "imagen": '../carro1.png'};
+      this.player3 = {"carrilId": x[2].carrilId, "imagen": '/assets/carro1.png'};
       this.players.push(this.player3);
       console.log(this.players);
     });
@@ -69,8 +69,8 @@ export class GameBoardComponent implements OnInit {
       console.log(x);
 
       if(x.type === 'carro.KilometrajeCambiado'){
-        //console.log(x.carrilId.uuid);
-        //console.log(this.player1);
+        console.log(x.carrilId.uuid);
+        console.log(this.player1);
         
         switch(x.carrilId.uuid) { 
           case this.player1.carrilId: {
@@ -91,7 +91,6 @@ export class GameBoardComponent implements OnInit {
 
       if(x.type === 'carril.CarroFinalizoSuRecorrido'){
         this.llegada.push(x.aggregateRootId);
-        this.llegada = this.llegada.reverse();
       }
 
       if(x.type === 'juego.JuegoFinalizado'){
@@ -99,12 +98,14 @@ export class GameBoardComponent implements OnInit {
         this.segundoLugar = x.podio.segundoLugar.nombre.value;
         this.tercerLugar = x.podio.tercerLugar.nombre.value;
 
-        this.players.reverse().forEach((player) => {
-          if(player.carrilId === this.llegada[0].toString()){
+        console.log(this.llegada);
+        
+        this.players.forEach((player) => {
+          if(player.carrilId == this.llegada[0].toString()){
             this.imagenPrimerLugar = player.imagen;
-          } else if(player.carrilId === this.llegada[1].toString()){
+          } else if(player.carrilId == this.llegada[1].toString()){
             this.imagenSegundoLugar = player.imagen;
-          } else if(player.carrilId === this.llegada[2].toString()){
+          } else if(player.carrilId == this.llegada[2].toString()){
             this.imagenTercerLugar = player.imagen;
           }
         });
@@ -113,6 +114,17 @@ export class GameBoardComponent implements OnInit {
   }
 
   goToSettings() {
+
+    this.players = [];
+    this.llegada = [];
+
+    this.primerLugar = '';
+    this.segundoLugar = '';
+    this.tercerLugar = '';
+    this.imagenPrimerLugar = '';
+    this.imagenSegundoLugar = '';
+    this.imagenTercerLugar = '';
+    
     this.router.navigate(['dashboard']);
   }
 

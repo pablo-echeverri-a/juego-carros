@@ -42,23 +42,23 @@ export class DataService {
   }
 
   sendPlayers(gameData: any) {
-    return this.http.post<any>('http://localhost:8080/crearJuego', gameData);
+    return this.http.post<any>('https://cargames.herokuapp.com/crearJuego', gameData);
   }
 
   startGame(id: string) {
     const gameId = { "juegoId": id };
 
-    return this.http.post<any>('http://localhost:8080/iniciarJuego', gameId);
+    return this.http.post<any>('https://cargames.herokuapp.com/iniciarJuego', gameId);
   }
 
   getCars(juegoId: string){
     let queryParams = new HttpParams();
     queryParams = queryParams.append("juegoId",juegoId);
-    return this.http.get(`http://localhost:8080/carros/${juegoId}`);
+    return this.http.get(`https://cargames.herokuapp.com/carros/${juegoId}`);
   }
 
   connectToWebSocket(juegoId: string) {
-    const webSocketSubject: WebSocketSubject<string> = webSocket(`ws://localhost:8080/retrieve/${juegoId}`);
+    const webSocketSubject: WebSocketSubject<string> = webSocket(`wss://cargames.herokuapp.com/retrieve/${juegoId}`);
     return webSocketSubject.asObservable();
   }
 }

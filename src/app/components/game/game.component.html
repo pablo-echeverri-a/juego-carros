@@ -43,11 +43,9 @@
         <input matInput placeholder="Kilometers" name="kilometers" ngModel />
       </mat-form-field>
     </div>
-
-    <pre>{{gameForm.value | json}}</pre>
-
+    <!--<pre>{{gameForm.value | json}}</pre>-->
     <button mat-raised-button color="primary" type="button" (click)="sendPlayers()">Create game</button>
-    <pre>{{gameId}}</pre>
+    <!--<pre>{{gameId}}</pre>-->
     <button mat-raised-button color="primary" type="button" (click)="startGame(gameId)">Start game</button>
 
   </form>
