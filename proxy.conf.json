@@ -1,0 +1,6 @@
+{
+    "target": "chttps://cargames.herokuapp.com",
+    "secure": true,
+    "logLevel": "debug",
+    "change-origin":true
+}

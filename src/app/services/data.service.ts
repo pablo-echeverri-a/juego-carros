@@ -42,19 +42,18 @@ export class DataService {
   }
 
   sendPlayers(gameData: any) {
-    return this.http.post<any>('https://cargames.herokuapp.com/crearJuego', gameData);
+    return this.http.post<any>('/crearJuego', gameData);
   }
 
   startGame(id: string) {
     const gameId = { "juegoId": id };
-
-    return this.http.post<any>('https://cargames.herokuapp.com/iniciarJuego', gameId);
-  }
+    return this.http.post<any>('/iniciarJuego', gameId);
+  } //https://cargames.herokuapp.com
 
   getCars(juegoId: string){
     let queryParams = new HttpParams();
     queryParams = queryParams.append("juegoId",juegoId);
-    return this.http.get(`https://cargames.herokuapp.com/carros/${juegoId}`);
+    return this.http.get(`/carros/${juegoId}`);
   }
 
   connectToWebSocket(juegoId: string) {

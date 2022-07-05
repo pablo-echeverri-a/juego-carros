@@ -65,10 +65,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "juego-carros:build:production"
+              "browserTarget": "juego-carros:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
-              "browserTarget": "juego-carros:build:development"
+              "browserTarget": "juego-carros:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
